@@ -47,9 +47,12 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.10",
     "electron-squirrel-startup": "^1.0.1",
+    "postcss": "^8.5.6",
+    "postcss-loader": "^8.1.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "xlsx": "^0.18.5"
+    "tailwindcss": "^4.1.10"
   }
 }

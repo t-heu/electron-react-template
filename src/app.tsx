@@ -1,15 +1,15 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-import './styles/global.scss'
-
-import Home from './pages/home'; 
+import './index.css'
 
 const root = createRoot(document.body);
 
 const App = () => {
   return (
-    <Home />
+    <h1 className="text-3xl font-bold underline">
+      Hello world!
+    </h1>
   )
 };
 
