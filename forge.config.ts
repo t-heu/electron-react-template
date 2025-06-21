@@ -1,6 +1,7 @@
 import type { ForgeConfig } from '@electron-forge/shared-types';
 //import { MakerSquirrel } from '@electron-forge/maker-squirrel'; //.exe
 import { MakerZIP } from '@electron-forge/maker-zip';
+import MyPortableMaker from './forge-makers/MakerMyPortable';
 //import { MakerDeb } from '@electron-forge/maker-deb';
 //import { MakerRpm } from '@electron-forge/maker-rpm';
 import { AutoUnpackNativesPlugin } from '@electron-forge/plugin-auto-unpack-natives';
@@ -30,7 +31,11 @@ const config: ForgeConfig = {
       loadingGif: './assets/loading.gif',
       iconUrl: 'https://raw.githubusercontent.com/t-heu/wms_desktop/refs/heads/main/assets/icons/icon.ico'
     }),*/ // Para gerar executáveis Windows (.exe)
-    new MakerZIP() // Para gerar executável portatil sem instalar Windows (.exe)
+    new MakerZIP(), // Para gerar executável portatil sem instalar Windows (.exe)
+    new MyPortableMaker({
+      appId: 'com.theu.wmslabeler',
+      icon: './assets/icons/icon.ico',
+    }),
   ],
   hooks: {
     preMake: async () => {
