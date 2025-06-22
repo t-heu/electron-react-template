@@ -12,7 +12,13 @@ rules.push({
   ],
 });
 
+const isDev = process.env.NODE_ENV !== 'production';
+
+console.log("Renderer process config ", isDev);
+
 export const rendererConfig: Configuration = {
+  mode: isDev ? 'development' : 'production',
+  devtool: isDev ? 'cheap-module-source-map' : false, // ou 'source-map' se quiser em prod
   module: {
     rules,
   },
